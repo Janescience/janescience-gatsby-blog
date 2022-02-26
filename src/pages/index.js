@@ -29,20 +29,22 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <ol className="blog-container grid">
         {posts.map(post => {
         const image = getImage(post.frontmatter.featuredImage)
         const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
+            <div key={post.fields.slug} className="blog-content">
               <article
                 className="post-list-item"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <header>
-                <GatsbyImage image={image} />
+                <div class="blog-header">
+                  <GatsbyImage image={image}  className="blog-img"/>
+                </div>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
@@ -59,7 +61,7 @@ const BlogIndex = ({ data, location }) => {
                   />
                 </section>
               </article>
-            </li>
+            </div>
           )
         })}
       </ol>
