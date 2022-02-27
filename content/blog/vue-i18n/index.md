@@ -1,8 +1,11 @@
 ---
 title: ทำเว็บ 2 ภาษาง่ายๆ ด้วย Vue i18n
 date: "2022-02-25T22:12:03.284Z"
-description: "เมื่ออยากมีเว็บ 2 ภาษาแบบ Vue i18n ช่วยได้"
+featuredImage : vuei18n.jpeg
+tag : "Vue"
 ---
+
+![Vue i18n](vuei18n.jpeg)
 
 เมื่อผมทำ Website portfolio ด้วย vue.js ไปสักพัก มีความคิดอยากให้เว็บมีภาษาไทยด้วย (ตอนแรกตั้งใจว่าจะทำเว็บเป็นภาษาอังกฤษ) เลยเริ่มหา Tools ที่ง่ายที่สุด อยากให้มันง่ายสะจนกดแล้วให้มันแปลภาษาให้เลย แต่ลองอยู่สักพักไม่น่าจะไหว คงต้องทำแบบแยกเขียน 2 ภาษาแล้ว Switch เอา จนไปเจอ [Vue i18n](https://kazupon.github.io/vue-i18n/installation.html#compatibility-note) มาลองทำไปพร้อมกันเลยครับ
 

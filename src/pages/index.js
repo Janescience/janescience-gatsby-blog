@@ -36,31 +36,24 @@ const BlogIndex = ({ data, location }) => {
 
           return (
             <div key={post.fields.slug} className="blog-content">
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
                 <header>
-                <div class="blog-header">
-                  <GatsbyImage image={image}  className="blog-img"/>
-                </div>
-                  <h2>
+                  <div >
                     <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
+                      <GatsbyImage image={image} className="blog-img"/>
                     </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
+                  </div>
+                  <div className="blog-data">
+                    <h3>
+                      <Link to={post.fields.slug} itemProp="url">
+                        <span itemProp="headline">{title}</span>
+                      </Link>
+                    </h3>
+                  </div>
+                  <div className="blog-footer">
+                    <small className="blog-date">{post.frontmatter.date}</small>
+                    <small className="blog-tag">{post.frontmatter.tag}</small>
+                  </div>
                 </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
             </div>
           )
         })}
@@ -87,13 +80,12 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description
+          tag
           featuredImage {
             childImageSharp {
               gatsbyImageData(
-                width: 100
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                width: 1000
+                layout : CONSTRAINED
               )
             }
           }
