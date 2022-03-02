@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@iconscout/react-unicons": "^1.1.6",
     "gatsby": "^4.8.0",
     "gatsby-plugin-feed": "^4.8.0",
     "gatsby-plugin-gatsby-cloud": "^4.8.0",

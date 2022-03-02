@@ -8,13 +8,13 @@ tag : "Git"
 ![Git Workflow](git-flow.jpeg)
 *<center>ขอบคุณรูปภาพจาก (https://tigosoftware.com/sites/default/files/2021-07/git-flow.jpg)</center>*
 
-สวัสดีครับ วันนี้ผมจะมาพูดถึงการใช้ Git ที่ดีขึ้นและใช้ได้อย่างเต็มประสิทธิภาพ ก่อนอื่นเลยต้องรู้จัก Git มาบ้าง และถ้าเคยใช้มาแล้ว ก็จะยิ่งเข้าใจง่ายขึ้นครับ แต่ถ้ายังไม่เคยใช้เลย ก็สามารถอ่านและศึกษาได้ครับ
+สวัสดีครับ วันนี้ผมจะมาพูดถึงการใช้ Git ที่ดีขึ้นและใช้ได้อย่างเต็มประสิทธิภาพ ก่อนอื่นเลยต้องรู้จัก Git มาบ้าง และถ้าเคยใช้มาแล้ว ก็จะยิ่งเข้าใจง่ายขึ้นครับ แต่ถ้ายังไม่เคยใช้เลย ก็สามารถอ่านและศึกษาได้ เนื้อหาทั้งหมดจะมีประมาณนี้ครับ
 
 
 - [จุดเริ่มต้น](#จุดเริ่มต้น)
 - [Git Workflow คืออะไร ?](#git-workflow-คืออะไร-)
 - [หลักการมีอะไรบ้าง ?](#หลักการมีอะไรบ้าง-)
-- [Git Workflow - Step By Step](#git-workflow---step-by-step)
+- [ลองทำ Git Workflow - Step By Step](#ลองทำ-git-workflow---step-by-step)
     - [Create/Setup Repository](#createsetup-repository)
       - [อธิบาย Git Command Line](#อธิบาย-git-command-line)
     - [Protect Branches](#protect-branches)
@@ -62,7 +62,7 @@ tag : "Git"
 - `chore/xxxx` -  สำหรับงานอื่นๆที่ไม่ได้อยู่ใน Plan อย่างเช่น ต้องการเปลี่ยนการเขียน Code ในส่วนนี้ ซึ่งไม่ได้เป็นทั้ง Feature หรือว่า Bug
 - `hotfix/xxxx` - เมื่อเกิด Bug ที่ Production แตกออกมาจาก `master` โดยตรง ไม่ควรจะเป็น Bug ที่รุนแรง ควรจะเป็นบัคที่แก้ไม่เยอะ และไม่ส่งผลต่อการทำงานส่วนอื่น  เมื่อเสร็จแล้วต้องนำกลับไป `merge` กับ Branch อื่นๆที่เหลือด้วย 
 - `release/v.xxx` - สำหรับ Release Version ขึ้น Production และบน Github ถ้าเราทำ Tags ทุกครั้งที่เรา Release จะมีการ Backup เป็น .zip , .tar.gz  ไว้ให้เราอีกด้วย
-หลังจาก Develop เสร็จและ Merge เข้า Branch หลักแล้ว ควรลบ Branch ย่อยออกด้วย  
+หลังจาก Develop เสร็จและ Merge เข้า Branch หลักแล้ว ควรลบ Branch ย่อยทั้งหมดนี้ออกด้วย  
 
 4. กำหนด Commit Message ให้ใช้ Format เดียวกันเพื่อจะได้เข้าใจตรงกัน  `git commit -m "[issue/task_number] commit message"` ตรง Commit Message ควรจะอธิบายให้เข้าใจว่างานนี้ทำอะไร แต่ไม่จำเป็นต้องยาวมาก 
 
@@ -71,22 +71,22 @@ tag : "Git"
 
 จากที่อธิบายมาทั้งหมด อาจจะพอเข้าใจได้บ้างว่าหลักการเป็นประมาณไหน แต่อาจจะยังไม่เข้าใจและเห็นภาพชัดเจน งั้นต่อไปผมจะลองทำให้ดูจริงๆเลย แบบ Step By Step 
 
-# Git Workflow - Step By Step
+# ลองทำ Git Workflow - Step By Step
 > ถ้าในเครื่องยังไม่มี Git ต้อง [Download & Install](https://git-scm.com/downloads) ก่อน และเนื้อหาต่อไปนี้จะใช้ Git Command Line เป็นหลักนะครับ
 
 
 ### Create/Setup Repository
- เริ่มจากสร้าง Repository บน Github (ต้องมี user) ผมจะสร้างเป็นแบบ Public นะครับ ถ้าสร้างเป็นแบบ Private เรื่องการ Protected Branch จะไม่สามารถทำได้ครับ ต้องเสียเงิน
-1. ไปที่เมนูรูป + ขวาบน เลือก **New repository**
+ เริ่มจากสร้าง Repository บน Github ผมจะสร้างเป็นแบบ Public นะครับ ถ้าสร้างเป็นแบบ Private เรื่องการ Protected Branch จะไม่สามารถทำได้ครับ ต้องเสียเงิน
+1. ไปที่เมนูรูป + ขวาบน เลือก **"New repository"**
 2. ตั้งชื่อ Repository ครับ และเลือกเป็น Public
 
 ![Create New Repository](https://raw.githubusercontent.com/Janescience/janescience/master/src/assets/documents/blogs/git-workflow/images/create-new-repo.png)
 
-3. เมื่อกดสร้างแล้ว ถ้าเราไม่ติ้กเลือก Add a README file จะมาเจอกับหน้านี้ ทาง Github จะบอกว่ามีวิธีอะไรบ้างที่สามารถสร้าง Repo หรือ Sync Repo จากที่เห็นจะมี สร้าง Repo ผ่าน Command Line , Sync ผ่าน Command Line หรือ Import 
+3. เมื่อกดสร้างแล้ว ถ้าเราไม่ติ้กเลือก **"Add a README file"** จะมาเจอกับหน้านี้ ทาง Github จะบอกว่ามีวิธีอะไรบ้างที่สามารถสร้าง Repository หรือ Sync Repository จากที่เห็นจะสามารถสร้างผ่าน Command Line , Sync ผ่าน Command Line หรือ Import 
 
 ![Sync Repository](https://raw.githubusercontent.com/Janescience/janescience/master/src/assets/documents/blogs/git-workflow/images/guide-remote.png)
 
-4. แต่เราได้สร้าง Repo บน Github แล้ว เหลือแค่ต้อง Sync กับ Project ในเครื่องของเรา **สร้าง Folder ตั้งชื่อตาม Repo > เปิด Terminal ขึ้นมา > cd เข้าไปใน Project > ใช้คำสั่ง Command ตามนี้**
+4. แต่เราได้สร้าง Repository บน Github แล้ว เหลือแค่ต้อง Sync กับ Project ในเครื่องของเรา **"สร้าง Folder ตั้งชื่อตาม Repo > เปิด Terminal ขึ้นมา > cd เข้าไปใน Project > ใช้คำสั่ง Command ตามนี้"**
 
 ```bash
 git init
@@ -115,7 +115,7 @@ git push origin master
 
 `git add .` - เป็นการบอกว่าเราต้องการเอาไฟล์อะไรบ้างที่มีการอัพเดต `push` ไปยัง Repository บน Github โดยหลัง `git add` ถ้าใส่ `.` คือเอาทุกไฟล์ที่มีการอัพเดต แต่ถ้าต้องการแค่บางไฟล์ ต้องทำแบบนี้ `git add README.md xxxxxx xxxxxx` ถ้าหลายไฟล์ต้องคั่นด้วยเว้นวรรค
 
-6. เพิ่ม Users อื่นๆที่เกี่ยวข้องกับ Project นี้เข้าไปด้วย เราจะจำลองให้เหมือนว่า Project นี้ร่วมกันทำงานหลายคน เพราะสุดท้ายยังไงก็ต้องมีการเลือก User ที่จะสามารถ Merge หรือ มา Review และเมื่อมี Action ต่างๆเกิดขึ้น User ที่เกี่ยวข้องจะได้รับรู้ด้วย ให้ไปที่ "*Settings > Collaborators > Add people > ค้นหาด้วยชื่อหรือ Username > Add ... to this repository*" User นี้จะได้รับ Email invite ต้องเข้าไปกด Accept invitation ด้วย
+6. เพิ่ม Users อื่นๆที่เกี่ยวข้องกับ Project นี้เข้าไปด้วย เราจะจำลองให้เหมือนว่า Project นี้ร่วมกันทำงานหลายคน เพราะสุดท้ายยังไงก็ต้องมีการเลือก User ที่จะสามารถ Merge หรือ มา Review และเมื่อมี Action ต่างๆเกิดขึ้น User ที่เกี่ยวข้องจะได้รับรู้ด้วย ให้ไปที่ **"Settings > Collaborators > Add people > ค้นหาด้วยชื่อหรือ Username > Add ... to this repository"** User นี้จะได้รับ Email invite ต้องเข้าไปกด Accept invitation ด้วย
 
 ![Invite](https://raw.githubusercontent.com/Janescience/janescience/master/src/assets/documents/blogs/git-workflow/images/invite.png)
 
@@ -124,7 +124,7 @@ git push origin master
 
 การ Protect Branches ทั้งหมด ทำบน Github UI
 
-1. สร้าง Branch อื่นๆเพิ่ม ของผมจะสร้างแค่ `dev` โดยการพิมพ์ชื่อ Branch ที่เราต้องการสร้าง ถ้ายังไม่มี จะมีให้กด Create branch
+1. สร้าง Branch อื่นๆเพิ่ม ของผมจะสร้างแค่ `dev` โดยการพิมพ์ชื่อ Branch ที่เราต้องการสร้าง ถ้ายังไม่มี จะมีให้กด **"Create branch: dev from `master`"**
 
 ![Create Branch](https://raw.githubusercontent.com/Janescience/janescience/master/src/assets/documents/blogs/git-workflow/images/create-branch.png)
 
@@ -138,15 +138,15 @@ git push origin master
 
 ![Protect Branches](https://raw.githubusercontent.com/Janescience/janescience/master/src/assets/documents/blogs/git-workflow/images//protect-branch.png)
 
-*Branch name pattern* - กรอกชื่อ Branches ได้มากกว่า 1 อย่างในรูป ผมกรอกไป 2 Branches `dev` , `master`
+**"Branch name pattern"** - กรอกชื่อ Branches ได้มากกว่า 1 อย่างในรูป ผมกรอกไป 2 Branches `dev` , `master`
 
-*Require a pull request before merging* - ต้องมีการสร้าง Pull Request ก่อน Merge และ ต้องมีการ Approve หรือไม่ และมีกี่คน
+**"Require a pull request before merging"** - ต้องมีการสร้าง Pull Request ก่อน Merge และ ต้องมีการ Approve หรือไม่ และมีกี่คน
 
-*Require status checks to pass before merging* - ต้องผ่าน Status Check ก่อนถึงจะ Merge ได้ เช่น Code ไม่ล่าสุด หรือ Code ชนกัน ก็จะ Merge ไม่ได้
+**"Require status checks to pass before merging"** - ต้องผ่าน Status Check ก่อนถึงจะ Merge ได้ เช่น Code ไม่ล่าสุด หรือ Code ชนกัน ก็จะ Merge ไม่ได้
 
 ![Protect Branch Admin](https://raw.githubusercontent.com/Janescience/janescience/master/src/assets/documents/blogs/git-workflow/images/protect-branch-admin.png)
 
-*Include administrators* - เป็นการบอกว่า Rules ทั้งหมด บังคับใช้กับ Admin ด้วย ถ้าไม่เลือกอันนี้ คนที่สร้าง Repo นี้จะยังสามารถ `push` ได้ครับ
+**"Include administrators"** - เป็นการบอกว่า Rules ทั้งหมด บังคับใช้กับ Admin ด้วย ถ้าไม่เลือกอันนี้ คนที่สร้าง Repo นี้จะยังสามารถ `push` ได้ครับ
 
 4. ทดสอบที่เรา Config ไปโดยลองแก้ไขไฟล์ README.md ใน `dev` และลอง `push` 
 

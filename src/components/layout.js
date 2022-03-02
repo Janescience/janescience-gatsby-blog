@@ -7,15 +7,13 @@ const Layout = ({ location, title, children }) => {
   
   const nav = (
       <div className="nav container">
-        <h1 className="main-heading">
+        <h3 className="main-heading">
           <Link to="/">{title}</Link>
-        </h1>
+        </h3>
         <div className="nav-menu" >
           <ul className="nav-list grid">
-              <li className="nav-item nav-icon">
-                <Link to="/about">
-                    About
-                </Link>
+              <li className="nav-item">
+                
               </li>
           </ul>
           <i className="nav-icon nav-close"></i>

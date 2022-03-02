@@ -29,7 +29,9 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <ol className="blog-container grid">
+      <h1 className="blogs-title">Blogs</h1>
+      <ol className="blog-container grid" id="blogs">
+        
         {posts.map(post => {
         const image = getImage(post.frontmatter.featuredImage)
         const title = post.frontmatter.title || post.fields.slug
