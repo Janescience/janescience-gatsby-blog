@@ -19,7 +19,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
                 name="s"
                 className='blog-search-input'
             />
-            <button type="submit" className='button'><Unicons.UilSearch/></button>
+            <Unicons.UilSearch size="20" />
         </div>
         
     </form>

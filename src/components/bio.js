@@ -42,9 +42,6 @@ const Bio = () => {
             <a href="https://www.linkedin.com/in/janewit-sirijan-562a45169/" target="_blank" className="bio-link-icon">
                 <Unicons.UilLinkedinAlt/>
             </a>
-            {/* <a href="https://drive.google.com/file/d/1p5Laavj2KbDfkDVXr7UfFkCdWpHXdYSw/view?usp=sharing" target="_blank" className="bio-link-icon">
-                <Unicons.UilFileSearchAlt/>
-            </a>     */}
         </div>
         <div className="bio-img">
             <svg className="bio-blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -71,9 +68,6 @@ const Bio = () => {
             </p>
             
         </div>
-
-       
-
       </div>
 
       <div class="bio-scroll">
