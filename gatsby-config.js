@@ -3,7 +3,7 @@ module.exports = {
     title: `Janescience`,
     author: {
       name: `Janescience`,
-      summary: `นักพัฒนาเว็บแอพลิเคชั่นท่านหนึ่ง`,
+      summary: `Full-stack web developer`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
@@ -99,6 +99,8 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                      tag
+                      featureImage
                     }
                   }
                 }
@@ -111,17 +113,65 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+          name: 'pages',
+          engine: 'flexsearch',
+          query: `
+          query {
+            localSearchPages {
+              index
+              store
+            }
+            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+              nodes {
+                excerpt
+                fields {
+                  slug
+                }
+                frontmatter {
+                  date(formatString: "MMMM DD, YYYY")
+                  title
+                  tag
+                  featuredImage {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 1000
+                        layout : CONSTRAINED
+                      )
+                    }
+                  }
+                }
+              }
+            }
+          }
+          `,
+          ref: 'title',
+          index: ['title', 'excerpt'],
+          store: ['title', 'excerpt', 'date', 'slug','featuredImage','tag'],
+          normalizer: ({ data }) =>
+          data.allMarkdownRemark.nodes.map(node => ({
+              title: node.frontmatter.title,
+              excerpt: node.excerpt,
+              date: node.frontmatter.date,
+              slug: node.fields.slug,
+              tag : node.frontmatter.tag,
+              featuredImage : node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
+          })),
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Janescience`,
-        short_name: `GatsbyJS`,
+        short_name: `Janescience`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/janescience.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

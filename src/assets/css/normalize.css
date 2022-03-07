@@ -64,6 +64,7 @@ hr {
 pre {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
+  border-radius: 5px;
 }
 
 /* Text-level semantics
@@ -75,6 +76,7 @@ pre {
 
 a {
   background-color: transparent;
+  cursor: pointer;
 }
 
 /**

@@ -64,12 +64,11 @@ const Bio = () => {
               </svg>
         </div>
         <div className="bio-data">
-            <h1 className="bio-title">สวัสดี, ผม Janescience</h1>
-            <h3 className="bio-subtitle">นักพัฒนาเว็บแอพลิเคชั่นท่านหนึ่ง</h3>
+            <h1 className="bio-title">สวัสดี , ผม Janescience</h1>
+            <div className="bio-subtitle">Full-stack web developer</div>
             <p className="bio-description">แค่อยากมีเว็บแนะนำตนเอง สะสมผลงาน และบันทึกการเรียนรู้ โดยมีเนื้อหาเกี่ยวกับสิ่งที่ได้เรียนรู้ต่างๆ ขึ้นอยู่กับความสนใจในช่วงนั้น ... 
-            <a href="about">
-                อ่านต่อ  
-            </a></p>
+            <a href="about">อ่านต่อ</a>
+            </p>
             
         </div>
 
@@ -79,9 +78,9 @@ const Bio = () => {
 
       <div class="bio-scroll">
           <a href="#blogs" class="bio-scroll-button button--flex">
-              <Unicons.UilMouseAlt size="30"/>
-              <span class="bio-scroll-name">อ่าน Blogs</span>
-              <Unicons.UilAngleDown/>
+              <Unicons.UilMouseAlt size="30" color="#FB4506"/>
+              <span class="bio-scroll-name">อ่าน Blog</span>
+              <Unicons.UilAngleDown color="#FB4506"/> 
           </a>
       </div>
      

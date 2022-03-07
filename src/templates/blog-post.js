@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import GiscusComment from '../components/giscus-comment'
+
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -29,10 +31,13 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
         <footer>
-          <Bio />
+          <div id="comments-container">
+            <GiscusComment mapping={location.pathname} />
+          </div>
         </footer>
+        <hr />
+
       </article>
       <nav className="blog-post-nav">
         <ul

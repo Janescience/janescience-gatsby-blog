@@ -27,9 +27,11 @@ const Layout = ({ location, title, children }) => {
       <header className="header">{nav}</header>
       <main>{children}</main>
       <footer className="container">
-        © {new Date().getFullYear()} janescience.com , Built with
+        © {new Date().getFullYear()} Janescience , Built with
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <a href="https://www.gatsbyjs.com">Gatsby</a>.
+        {` `}
+        All Rights Reserved.
       </footer>
     </div>
   )

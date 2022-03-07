@@ -29,10 +29,10 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: "Kanit" ,sans-serif;
-  --fontFamily-serif: "Kanit" ,sans-serif,
+  --fontFamily-sans: 'Kanit', sans-serif;
+  --fontFamily-serif: "CloudSoft" ,sans-serif,
     Times, serif;
-  --font-body: var(--fontFamily-serif);
+  --font-body: var(--fontFamily-sans);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
@@ -54,13 +54,16 @@
   --fontSize-5: 2.488rem;
   --fontSize-6: 2.986rem;
   --fontSize-7: 3.2rem;
-  --color-primary: #005b99;
+  /* --color-primary: #64ffda; */
+  --color-primary: #FB4506;
   --color-primary-alt : #0576c2;
-  --color-text: #2e353f;
+  --color-text: #e6f1ff;
   --color-text-light: #4f5969;
-  --color-heading: #1a202c;
+  --color-heading: #e6f1ff;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-background : #0a192f;
+  --color-background-alt : #112643;
 
   --z-fixed: 100;
 }
@@ -88,10 +91,12 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 footer {
   padding: var(--spacing-6) var(--spacing-0);
+  text-align: center;
 }
 
 hr {
@@ -127,7 +132,7 @@ h6 {
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: var(--color-heading);
 }
 
 h2 {
@@ -322,7 +327,7 @@ a:focus {
 
 .bio-link-icon{
   font-size: 1.25rem;
-  color: var(--first-color);
+  color: var(--color-primary);
 }
 
 .bio-link-icon:hover{
@@ -331,7 +336,7 @@ a:focus {
 
 .bio-blob{
   /* width: 200px; */
-  fill:var(--first-color);
+  fill:#CFCFCF;
 }
 
 .bio-blob-img{
@@ -344,13 +349,18 @@ a:focus {
 
 .bio-title{
 	font-size: var(--fontSize-6);
+  color: var(--color-heading);
 }
 
 .bio-subtitle{
-	font-size: var(--fontSize-2);
+	font-size: var(--fontSize-1);
 	color: var(--color-text);
-	font-weight: var(--fontWeight-medium);
+	font-weight: var(--fontWeight-normal);
 	margin-bottom: var(--spacing-3);
+  background-color: var(--color-background-alt);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .bio-description{
@@ -387,8 +397,7 @@ a:focus {
 }
 
 .blog-post header h1 {
-  margin-top: 7rem;
-  /* margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-4); */
+  margin-top: 2rem;
 }
 
 .blog-post header p {
@@ -397,7 +406,7 @@ a:focus {
 }
 
 .blog-post-nav ul {
-  margin: var(--spacing-0);
+  margin-top:2rem;
 }
 
 .gatsby-highlight {
@@ -407,6 +416,7 @@ a:focus {
 .blogs-title{
   text-align: center;
   margin-top: 5rem;
+  color: var(--color-heading);
 }
 
 .blog-container {
@@ -421,7 +431,7 @@ a:focus {
 	overflow: hidden;
 	box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
 	border-radius: 1em;
-	background-color: var(--container-color);
+	background-color: var(--color-background-alt);
 	grid-template-rows: repeat(3,1fr);
 	
 }
@@ -464,6 +474,31 @@ a:focus {
 	font-size: var(--fontSize-0);
 	cursor: pointer;
 	font-weight: var(--fontWeight-black);
+}
+
+.blog-search-form {
+  padding: 10px;
+  text-align: center;
+}
+
+.blog-search-input {
+  font-family: inherit;
+  width: auto;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: var(--color-text);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-right: 10px;
+}
+
+
+.blog-search-group {
+  position: flex;
+  padding: 10px;
 }
 
 .grid {
@@ -528,6 +563,10 @@ a:focus {
 
 
 @media screen and (min-width:768px) {
+
+  .blog-post header h1 {
+    margin-top: 7rem;
+  }
 
   .main-heading {
     font-size: var(--fontSize-5);
@@ -599,7 +638,7 @@ a:focus {
 	}
 
 	.blog-container{
-		grid-template-columns: repeat(4,1fr);
+		grid-template-columns: repeat(2,1fr);
 	}
 
 }
