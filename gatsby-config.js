@@ -100,7 +100,6 @@ module.exports = {
                       title
                       date
                       tag
-                      featureImage
                     }
                   }
                 }
