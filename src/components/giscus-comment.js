@@ -9,8 +9,8 @@ const GiscusComment = ({ mapping }) => {
   const config = {
     repo: 'Janescience/janescience-gatsby-blog',
     repoId: 'R_kgDOG5-jKg',
-    category: '',
-    categoryId: '',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOG5-jKs4CN7xK',
     reactions: '1',
     metadata: '0',
     theme: 'dark'
