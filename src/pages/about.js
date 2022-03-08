@@ -53,7 +53,7 @@ const About = ({ data, location }) => {
                     <b>2021</b> ย้ายมาทำงานสาย Outsource ให้กับ <a href="https://www.ocean.co.th/" target='_blank' className="have-under" style={{ color : '#0CBCCC' }} >Ocean Life Insurance</a> <br/>
                     <b>2022</b> ย้ายมาทำงานให้กับ <a href="https://www.krungsri.com/en/personal" target='_blank' className="have-under" style={{ color : '#F5D02D' }} >Bay Bank</a> ยังคงเป็น Outsource ถึงปัจจุบัน <br/>
                 </p>
-                <a href="" target="_blank" className="button">Resume <Unicons.UilEye size="20"/></a>
+                <a href="https://drive.google.com/file/d/1p5Laavj2KbDfkDVXr7UfFkCdWpHXdYSw/view?usp=sharing" target="_blank" className="button">Resume <Unicons.UilEye size="20"/></a>
 
                 <h3><Unicons.UilHeartSign size="30"/></h3>
                 <p>
