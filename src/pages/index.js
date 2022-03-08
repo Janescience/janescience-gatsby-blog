@@ -8,7 +8,7 @@ import BlogSearch from "../components/search"
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useFlexSearch } from 'react-use-flexsearch';
-
+import * as Unicons from '@iconscout/react-unicons';
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -42,9 +42,14 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
         <Bio />
-        <p>
-          No blog posts found.
-        </p>
+        <h1 className="blogs-title">Blog</h1>
+        <BlogSearch
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
+        <div className="container" style={{ textAlign : 'center' , padding : '3rem'}}>
+          <h5 >Blog posts not found.</h5><Unicons.UilTimesCircle size="40" color="#FB4506"/>
+        </div>
       </Layout>
     )
   }
@@ -53,17 +58,19 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <h1 className="blogs-title">Blog</h1>
+      <h1 className="blogs-title ">Blog</h1>
       <BlogSearch
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
         />
+        
       <ol className="blog-container container grid" id="blogs">
   
-        {posts.map(post => {
-        const image = getImage(post.frontmatter.featuredImage)
-        const title = post.frontmatter.title || post.fields.slug
-        const slug = post.fields ?  post.fields.slug : post.slug
+        {
+        posts.map(post => {
+          const image = getImage(post.frontmatter.featuredImage)
+          const title = post.frontmatter.title || post.fields.slug
+          const slug = post.fields ?  post.fields.slug : post.slug
 
           return (
             <div key={slug} className="blog-content">

@@ -62,9 +62,9 @@ const Bio = () => {
         </div>
         <div className="bio-data">
             <h1 className="bio-title">สวัสดี , ผม Janescience</h1>
-            <div className="bio-subtitle">Full-stack web developer</div>
+            <div className="bio-subtitle">Full Stack Web Developer </div>
             <p className="bio-description">แค่อยากมีเว็บแนะนำตนเอง สะสมผลงาน และบันทึกการเรียนรู้ โดยมีเนื้อหาเกี่ยวกับสิ่งที่ได้เรียนรู้ต่างๆ ขึ้นอยู่กับความสนใจในช่วงนั้น ... 
-            <a href="about">อ่านต่อ</a>
+            <a className="have-under" href="about"> อ่านต่อ</a>
             </p>
             
         </div>

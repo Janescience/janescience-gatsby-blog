@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import GiscusComment from '../components/giscus-comment'
 
+import * as Unicons from '@iconscout/react-unicons';
+
+
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -52,14 +55,14 @@ const BlogPostTemplate = ({ data, location }) => {
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                <Unicons.UilAngleLeftB/> {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title} <Unicons.UilAngleRightB/>
               </Link>
             )}
           </li>
