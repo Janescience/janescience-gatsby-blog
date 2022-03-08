@@ -522,6 +522,14 @@ a:focus {
 	gap : 1.5rem;
 }
 
+.webring{
+  max-width: 20px;
+}
+
+.webring a img {
+  vertical-align: middle;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {
@@ -579,6 +587,10 @@ a:focus {
 
   .bio-data {
     grid-column: initial;
+  }
+
+  .webring{
+    max-width: 30px;
   }
 }
 

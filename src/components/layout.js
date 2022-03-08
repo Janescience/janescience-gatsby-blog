@@ -9,14 +9,17 @@ const Layout = ({ location, title, children }) => {
       <div className="nav container">
         <h3 className="main-heading">
           <Link to="/">{title}</Link>
+          
         </h3>
-        <div className="nav-menu" >
-          <ul className="nav-list grid">
-              <li className="nav-item">
-                
-              </li>
-          </ul>
-          <i className="nav-icon nav-close"></i>
+        <div className="webring">
+          <a href="https://webring.wonderful.software/#/janescience.com" title="วงแหวนเว็บ">
+            <img
+              alt="วงแหวนเว็บ"
+              width="32"
+              height="32"
+              src="https://webring.wonderful.software/webring.white.svg"
+            />
+          </a>
         </div>
       </div>
     )
