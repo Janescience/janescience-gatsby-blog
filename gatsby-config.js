@@ -6,7 +6,7 @@ module.exports = {
       summary: `Full-stack web developer`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://janescience.com`,
     social: {
       twitter: `kylemathews`,
     },
