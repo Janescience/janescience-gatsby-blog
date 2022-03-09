@@ -12,7 +12,7 @@ const Layout = ({ location, title, children }) => {
           
         </h3>
         <div className="webring">
-          <a href="https://webring.wonderful.software/#/janescience.com" title="วงแหวนเว็บ">
+          <a href="https://webring.wonderful.software#janescience.com" title="วงแหวนเว็บ">
             <img
               alt="วงแหวนเว็บ"
               width="32"
